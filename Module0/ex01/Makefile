@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 11:00:15 by nguiard           #+#    #+#              #
-#    Updated: 2022/04/14 11:42:39 by nguiard          ###   ########.fr        #
+#    Updated: 2022/04/14 13:33:02 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ SHELL:= /bin/zsh
 
 SRC = main.cpp 		\
 	PhoneBook.cpp	\
+	Contact.cpp		\
 
 CC = g++
 
@@ -30,3 +31,13 @@ ${NAME}: ${OBJ}
 	${CC} ${OBJ} ${FLAGS} -o ${NAME}
 
 all: ${NAME}
+
+clean:
+	rm -rf ${OBJ}
+
+fclean:
+	rm -rf ${OBJ} ${NAME}
+
+re: fclean all
+
+.PHONY: all fclean clean re

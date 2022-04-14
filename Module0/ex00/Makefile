@@ -6,7 +6,7 @@
 #    By: nguiard <nguiard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 11:00:15 by nguiard           #+#    #+#              #
-#    Updated: 2022/04/14 11:11:23 by nguiard          ###   ########.fr        #
+#    Updated: 2022/04/14 11:51:12 by nguiard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,3 +29,13 @@ ${NAME}: ${OBJ}
 	${CC} ${OBJ} ${FLAGS} -o ${NAME}
 
 all: ${NAME}
+
+clean:
+	rm -rf ${OBJ}
+
+fclean:
+	rm -rf ${OBJ} ${NAME}
+
+re: fclean all
+
+.PHONY: all fclean clean re
